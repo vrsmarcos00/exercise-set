@@ -12,13 +12,15 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Set<Integer> set = new HashSet<>();
+		Set<Integer> a = new HashSet<>();
+		Set<Integer> b = new HashSet<>();
+		Set<Integer> c = new HashSet<>();
 		
 		System.out.print("How many students for course A? ");
 		int n = sc.nextInt();
 		for (int i=0; i<n; i++) {
 			int user = sc.nextInt();
-			set.add(user);
+			a.add(user);
 		}
 		
 		System.out.println();
@@ -27,7 +29,7 @@ public class Program {
 		n = sc.nextInt();
 		for (int i=0; i<n; i++) {
 			int user = sc.nextInt();
-			set.add(user);
+			b.add(user);
 		}
 		
 		System.out.println();
@@ -36,11 +38,15 @@ public class Program {
 		n = sc.nextInt();
 		for(int i=0; i<n; i++) {
 			int user = sc.nextInt();
-			set.add(user);
+			c.add(user);
 		}
 		
+		Set<Integer> total = new HashSet<>(a);
+		total.addAll(b);
+		total.addAll(c);
+		
 		System.out.println();
-		System.out.print("Total students: " + set.size());
+		System.out.print("Total students: " + total.size());
 		
 		
 		
